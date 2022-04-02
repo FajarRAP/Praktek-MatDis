@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     system("cls");
 
-    int a[20], b[20], banyakA, banyakB;
+    int a[20], b[20], banyakA, banyakB, temp, hasil[20], q=0;
 
     cout<<"Irisan & Gabungan 2 Himpunan"<<endl;
     cout<<"============================"<<endl<<endl;
@@ -48,16 +48,11 @@ int main(){
 
     cout<<endl<<endl;
     cout<<"----------------------------"<<endl;
-    cout<<"A irisan B = {";
+    cout<<"A irisan B = { ";
     for(int i=0; i<banyakA; i++){
         for(int j=0; j<banyakB; j++){
             if(a[i]==b[j]){
-                if(i==banyakA-1){
-                    cout<<a[i];
-                }else{
-                    cout<<a[i]<<", ";
-                }
-                
+                cout<<a[i]<<" ";
             }
         }
     }
@@ -75,6 +70,38 @@ int main(){
             cout<<b[i]<<", ";
         }
     }
+    cout<<"}";
+
+    cout<<endl<<endl;
+    cout<<"A selisih B = { ";
+    for(int i=0; i<banyakA; i++){
+        temp=0;
+        for(int j=0; j<banyakB; j++){
+            if(a[i]==b[j]){
+                temp=1;
+            }
+        }
+        if(temp==0){           
+            cout<<a[i]<<" ";
+        }
+    }
+
+    cout<<"}";
+
+    cout<<endl<<endl;
+    cout<<"B selisih A = { ";
+    for(int i=0; i<banyakB; i++){
+        temp=0;
+        for(int j=0; j<banyakA; j++){
+            if(b[i]==a[j]){
+                temp=1;
+            }
+        }
+        if(temp==0){
+            cout<<b[i]<<" ";           
+        }
+    }
+
     cout<<"}";
 
     cout<<endl<<endl;
